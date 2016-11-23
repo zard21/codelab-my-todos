@@ -1,0 +1,17 @@
+ <ion-view view-title="목록" ng-controller="ListCtrl">
+  <ion-content>
+    <ion-list show-reorder="reorder">
+      <ion-item href="#/edit/{{todo.id}}" class="item-remove-animate item-icon-right" ng-repeat="todo in todos">
+        <h2>{{todo.title}}</h2>
+        <p>{{todo.description}}</p>
+        <i ng-if="todo.complete" class="icon ion-checkmark-circled"></i>
+        <ion-reorder-button class="ion-drag" on-reorder="doReorder(todo, $fromIndex, $toIndex)"></ion-reorder-button>
+        <ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="delete(todo.id)">삭제</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <div class="bar bar-footer bar-stable">
+  	<a href="#/add" class="button button-calm icon-left ion-compose">새로운 할 일</a>
+  	<button class="button button-assertive icon-left ion-shuffle" ng-click="toggleReorder()">정렬</button>
+  </div>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view view-title="할 일 입력">
+	<ion-content>
+		<div class="list card">
+			<div class="item item-input">
+				<input type="text" ng-model="todo.title">
+			</div>
+			<div class="item item-input">
+				<textarea rows="5" ng-model="todo.description"></textarea>
+			</div>
+			<ion-checkbox ng-model="todo.complete">완료</ion-checkbox>
+		</div>
+		<div class="padding">
+			<button class="button button-block button-positive" ng-click="save()">저장</button>
+		</div>
+	</ion-content>
+</ion-view>
